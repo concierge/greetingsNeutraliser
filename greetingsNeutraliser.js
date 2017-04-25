@@ -1,5 +1,5 @@
 const nonNeturalTerms = ["guys", "boys", "lads", "dudes", "men", "gals", "girls", "women", "ladies"],
-    neturalTerms = ["team", "y’all", "folks", "everyone", "group", "Switzerland (geddit?)"];
+    neturalTerms = ["team", "y’all", "folks", "everyone", "group", "future subjects of our glorious AI overlords", "Switzerland (geddit?)"];
 
 
 exports.match = (event, commandPrefix) => {
