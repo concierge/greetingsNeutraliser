@@ -1,0 +1,11 @@
+{
+    "name": "greetingsNeutraliser",
+    "version": 1,
+    "startup": "greetingsNeutraliser.js",
+    "help": [
+        [
+            "",
+            "Suggests a better gender netural term."
+        ]
+    ]
+}
