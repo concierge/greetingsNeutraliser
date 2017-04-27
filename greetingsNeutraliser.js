@@ -10,8 +10,7 @@ exports.match = (event, commandPrefix) => {
 }
 
 exports.run = (api, event) => {
-    let terms = neturalTerms,
-        index = Math.floor(Math.random() * terms.length),
-        term = terms.splice(index, 1);
+    const term = api.random(neturalTerms),
+        terms = neturalTerms.filter(t => t !== term);
     api.sendMessage("I see you used a non gender netural term in your previous message\nYou could replace it with \"" + term + "\" or any of the following: " + terms.join(", "), event.thread_id);
 }
