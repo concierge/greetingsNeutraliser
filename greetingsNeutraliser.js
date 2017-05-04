@@ -3,7 +3,7 @@ const nonNeturalTerms = ["guys", "boys", "lads", "dudes", "men", "gals", "girls"
 
 
 exports.match = (event, commandPrefix) => {
-    if (new RegExp('\\b' + nonNeturalTerms.join("|") + '\\b', "i").test(event.body)) {
+    if (event.arguments.some(a => nonNeutralTerms.includes(a.toLowerCase()))) {
         return true;
     }
     return false;
