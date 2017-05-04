@@ -1,9 +1,9 @@
 const nonNeturalTerms = ["guys", "boys", "lads", "dudes", "men", "gals", "girls", "women", "ladies"],
-    neturalTerms = ["team", "y’all", "folks", "everyone", "group", "future subjects of our glorious AI overlords", "Switzerland (geddit?)"];
+    neturalTerms = ["team", "folks", "everyone", "group", "people", "future subjects of our glorious AI overlords", "Switzerland (geddit?)"];
 
 
 exports.match = (event, commandPrefix) => {
-    if (new RegExp(nonNeturalTerms.join("|"), "i").test(event.body)) {
+    if (new RegExp('\\b' + nonNeturalTerms.join("|") + '\\b', "i").test(event.body)) {
         return true;
     }
     return false;
