@@ -1,5 +1,5 @@
-const nonNeturalTerms = ["guys", "boys", "lads", "dudes", "men", "gals", "girls", "women", "ladies"],
-    neturalTerms = ["team", "folks", "everyone", "group", "people", "future subjects of our glorious AI overlords", "Switzerland (geddit?)"];
+const nonNeutralTerms = ["guys", "boys", "lads", "dudes", "men", "gals", "girls", "women", "ladies"],
+    neutralTerms = ["team", "folks", "everyone", "group", "people", "future subjects of our glorious AI overlords", "Switzerland (geddit?)"];
 
 
 exports.match = (event, commandPrefix) => {
@@ -10,7 +10,7 @@ exports.match = (event, commandPrefix) => {
 }
 
 exports.run = (api, event) => {
-    const term = api.random(neturalTerms),
-        terms = neturalTerms.filter(t => t !== term);
+    const term = api.random(neutralTerms),
+        terms = neutralTerms.filter(t => t !== term);
     api.sendMessage("I see you used a non gender netural term in your previous message\nYou could replace it with \"" + term + "\" or any of the following: " + terms.join(", "), event.thread_id);
 }
